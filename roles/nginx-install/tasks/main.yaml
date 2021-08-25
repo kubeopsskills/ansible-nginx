@@ -1,0 +1,11 @@
+- name: Update Packages
+  shell: sudo apt update
+
+- name: Install Nginx
+  shell: sudo apt install nginx
+
+- name: Start Nginx Service
+  systemd:
+    name: nginx
+    state: started
+    enabled: True
