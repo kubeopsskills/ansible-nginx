@@ -1,11 +1,14 @@
 - name: Update Packages
-  shell: sudo apt update
+  apt:
+   update_cache: yes
 
 - name: Install Nginx
-  shell: sudo apt install nginx
+  apt:
+   name: nginx
 
 - name: Start Nginx Service
   systemd:
     name: nginx
     state: started
     enabled: True
+    masked: no

@@ -1,0 +1,11 @@
+- name: Stop Nginx Service
+  systemd:
+    name: nginx
+    state: stopped
+    enabled: no
+    masked: yes
+
+- name: Uninstall Nginx
+  apt:
+   name: nginx
+   state: absent
